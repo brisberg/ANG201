@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { NavigationModule } from './navigation/navigation.module';
+import { HeroesModule } from './heroes/heroes.module';
 
 @NgModule({
   declarations: [
@@ -10,7 +11,8 @@ import { NavigationModule } from './navigation/navigation.module';
   ],
   imports: [
     BrowserModule,
-    NavigationModule
+    NavigationModule,
+    HeroesModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,4 +1,5 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import {By} from '@angular/platform-browser';
 
 import { NavbarComponent } from './navbar.component';
 
@@ -19,7 +20,22 @@ describe('NavbarComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should be created', () => {
+  it('should be created with initial state', () => {
     expect(component).toBeTruthy();
+    expect(component.state).toEqual('Left');
+  });
+
+  it('should set the state', () => {
+    component.setState('foobar');
+    fixture.detectChanges();
+    expect(component.state).toEqual('foobar');
+  });
+
+  it('should display the state', () => {
+    const labelEl = fixture.debugElement.query(By.css('label'));
+    expect(labelEl.nativeElement.innerHTML).toBe('Left');
+    component.setState('foobar');
+    fixture.detectChanges();
+    expect(labelEl.nativeElement.innerHTML).toBe('foobar');
   });
 });

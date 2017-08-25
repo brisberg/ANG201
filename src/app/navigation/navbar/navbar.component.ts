@@ -6,10 +6,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./navbar.component.css']
 })
 export class NavbarComponent implements OnInit {
+	state = "Left"
 
   constructor() { }
 
   ngOnInit() {
+  }
+
+  setState(val: string) {
+  	this.state = val;
   }
 
 }
